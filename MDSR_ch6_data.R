@@ -1,4 +1,5 @@
 library(tidyverse)
+library(mdsr)
 
 hiv <- tribble(
   ~Country, ~`1979`, ~`1989`, ~`1999`, ~`2009`,
