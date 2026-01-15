@@ -4,7 +4,6 @@ if (!require(ggplot2)) install.packages('ggplot2')
 library(ggplot2)
 
 qplot <- function(x, y, ..., data, geom = NULL, method = 'loess'){
-  #caller_env <- parent.frame()
   exprs <- enquos(x = x, y = y, ...) 
   mapping <- class_mapping(exprs, env = parent.frame())
   if ("color" %in% names(mapping)) names(mapping)[which(names(mapping) == "color")] <- "colour"
@@ -14,4 +13,5 @@ qplot <- function(x, y, ..., data, geom = NULL, method = 'loess'){
   if ("smooth" %in% geom) p <- p + geom_smooth(method = method)
   p
 }
+
 
